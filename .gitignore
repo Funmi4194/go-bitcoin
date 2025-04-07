@@ -1,0 +1,13 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+
+# Test binary, build with `go test -c`
+*.test
+
+# OS files
+*.db
+*.DS_Store
+
+# Notes
+todo.md
