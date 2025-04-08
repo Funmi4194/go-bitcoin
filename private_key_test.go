@@ -3,6 +3,8 @@ package bitcoin
 import (
 	"encoding/hex"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // TestPrivateKeyFromString will test the method PrivateKeyFromString()
@@ -36,4 +38,12 @@ func TestPrivateKeyFromString(t *testing.T) {
 			t.Fatalf("%s Failed: [%s] inputted [%s] expected but failed comparison of keys, got: %s", t.Name(), test.input, test.expectedKey, hex.EncodeToString(privKey.Serialize()))
 		}
 	}
+}
+
+// TestCreatePrivateKey will test the method CreatePrivateKey()
+func TestCreatePrivateKey(t *testing.T) {
+	rawKey, err := CreatePrivateKey()
+	assert.NoError(t, err)
+	assert.NotNil(t, rawKey)
+	assert.Equal(t, 32, len(rawKey.Serialize()))
 }

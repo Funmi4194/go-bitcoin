@@ -20,3 +20,8 @@ func PrivateKeyFromString(privateKey string) (*btcec.PrivateKey, error) {
 	privKey, _ := btcec.PrivKeyFromBytes(privKeyBytes)
 	return privKey, nil
 }
+
+// CreatePrivateKey will create a new private key (*btcec.PrivateKey)
+func CreatePrivateKey() (*btcec.PrivateKey, error) {
+	return btcec.NewPrivateKey()
+}
