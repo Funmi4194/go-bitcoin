@@ -47,3 +47,10 @@ func TestCreatePrivateKey(t *testing.T) {
 	assert.NotNil(t, rawKey)
 	assert.Equal(t, 32, len(rawKey.Serialize()))
 }
+
+// TestCreatePrivateKeyString will test the method CreatePrivateKeyString()
+func TestCreatePrivateKeyString(t *testing.T) {
+	key, err := CreatePrivateKeyString()
+	assert.NoError(t, err)
+	assert.Equal(t, 64, len(key))
+}

@@ -25,3 +25,13 @@ func PrivateKeyFromString(privateKey string) (*btcec.PrivateKey, error) {
 func CreatePrivateKey() (*btcec.PrivateKey, error) {
 	return btcec.NewPrivateKey()
 }
+
+// CreatePrivateKeyString will create a new private key (hex encoded)
+func CreatePrivateKeyString() (string, error) {
+	privateKey, err := CreatePrivateKey()
+	if err != nil {
+		return "", err
+	}
+
+	return hex.EncodeToString(privateKey.Serialize()), nil
+}
