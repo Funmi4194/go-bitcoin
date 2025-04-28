@@ -24,3 +24,6 @@ var ErrInvalidPubKey = errors.New("invalid pubkey")
 
 // ErrMissingAddress is returned when an address is missing
 var ErrMissingAddress = errors.New("missing address")
+
+// ErrWifMissing is returned when a wif is missing
+var ErrWifMissing = errors.New("wif is missing")
